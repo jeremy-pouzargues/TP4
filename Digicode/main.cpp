@@ -1,32 +1,15 @@
-#include <iostream>
 
-#include "Alarme.h"
-#include "Capteur.h"
+#include <iostream>
+#include "Systeme.h"
 
 using namespace std;
 
-using namespace nsDigicode;
+#define DELAI_CLAVIER 5
+#define DELAI_PORTE 8
+#define NB_CHIFFRES_CLAVIER 4
 
-void testAlarme (void)
+int main (void)
 {
-    Alarme alarme;
-    alarme.declencher();
-}// testAlarme ()
-
-void testCapteur (void)
-{
-    Capteur capteur;
-    while (true) {
-        if (capteur.detecter() != 0) break;
-    }
-}// testCapteur ()
-
-
-int main(void)
-{
-    //cout << "A vous de compléter le code  !!!"  << endl;
-    //testAlarme();
-    //testCapteur();
-
+    nsDigicode::Systeme system(DELAI_CLAVIER, DELAI_PORTE, NB_CHIFFRES_CLAVIER);
     return 0;
 }
